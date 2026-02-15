@@ -1,0 +1,163 @@
+// ======================
+// Colors
+// ======================
+$white: #ffffff;
+$black: #093412;
+$primary: #007a2f;
+$primary-dark: #093412;
+$primary-light: #3d8f44;
+$accent: #ff7f11;
+$text: #093412;
+$text-light: #3d8f44;
+$bg: #ffffff;
+$bg-alt: #e0e2db;
+
+// ======================
+// Fonts
+// ======================
+$font-heading: "Alan Sans", Arial, Helvetica, sans-serif;
+$font-body: "Alan Sans", Arial, Helvetica, sans-serif;
+
+// ======================
+// Spacing
+// ======================
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+$spacing-2xl: 3rem;
+$spacing-3xl: 4rem;
+
+// ======================
+// Breakpoints
+// ======================
+$md: 720px;
+$lg: 1020px;
+
+// ======================
+// Typography Mixins
+// ======================
+@mixin h1 {
+  font-family: $font-heading;
+  font-weight: 700;
+  font-size: 2rem;
+
+  @media (min-width: $md) {
+    font-size: 2.5rem;
+  }
+
+  @media (min-width: $lg) {
+    font-size: 3rem;
+  }
+}
+
+@mixin h2 {
+  font-family: $font-heading;
+  font-weight: 700;
+  font-size: 1.75rem;
+
+  @media (min-width: $md) {
+    font-size: 2rem;
+  }
+
+  @media (min-width: $lg) {
+    font-size: 2.5rem;
+  }
+}
+
+@mixin h3 {
+  font-family: $font-heading;
+  font-weight: 700;
+  font-size: 1.5rem;
+
+  @media (min-width: $md) {
+    font-size: 1.75rem;
+  }
+
+  @media (min-width: $lg) {
+    font-size: 2rem;
+  }
+}
+
+@mixin h4 {
+  font-family: $font-heading;
+  font-weight: 600;
+  font-size: 1.25rem;
+
+  @media (min-width: $md) {
+    font-size: 1.375rem;
+  }
+
+  @media (min-width: $lg) {
+    font-size: 1.5rem;
+  }
+}
+
+@mixin p-large {
+  font-family: $font-body;
+  font-size: 1.125rem;
+
+  @media (min-width: $md) {
+    font-size: 1.25rem;
+  }
+
+  @media (min-width: $lg) {
+    font-size: 1.375rem;
+  }
+}
+
+@mixin p {
+  font-family: $font-body;
+  font-size: 1rem;
+
+  @media (min-width: $md) {
+    font-size: 1rem;
+  }
+
+  @media (min-width: $lg) {
+    font-size: 1.125rem;
+  }
+}
+
+@mixin caption {
+  font-family: $font-body;
+  font-size: 0.75rem;
+
+  @media (min-width: $md) {
+    font-size: 0.8125rem;
+  }
+
+  @media (min-width: $lg) {
+    font-size: 0.875rem;
+  }
+}
+
+// ======================
+// Layout Mixins
+// ======================
+@mixin container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @media (min-width: $md) {
+    padding: 0 1.5rem;
+  }
+
+  @media (min-width: $lg) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@mixin grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 0.5rem;
+
+  @media (min-width: $lg) {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
+  }
+}

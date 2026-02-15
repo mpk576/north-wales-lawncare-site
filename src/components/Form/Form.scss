@@ -1,0 +1,86 @@
+@use "../../lib" as *;
+
+.form {
+  background: $primary;
+  padding: $spacing-2xl 0;
+  color: $white;
+}
+
+.form__container {
+  @include container;
+  max-width: 700px;
+}
+
+.form__heading {
+  @include h2;
+  color: $white;
+  margin-bottom: $spacing-md;
+}
+
+.form__description {
+  @include p-large;
+  color: $white;
+  margin-bottom: $spacing-xl;
+  opacity: 0.9;
+}
+
+.form__field {
+  margin-bottom: $spacing-md;
+}
+
+.form__label {
+  @include p-large;
+  display: block;
+  margin-bottom: $spacing-xs;
+  font-weight: 600;
+  color: $white;
+}
+
+.form__input,
+.form__textarea {
+  @include p-large;
+  width: 100%;
+  padding: $spacing-sm $spacing-md;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  font-family: inherit;
+  background: $white;
+  color: $text;
+
+  &:focus {
+    outline: 2px solid $accent;
+    outline-offset: 1px;
+  }
+}
+
+.form__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.form__error {
+  display: block;
+  margin-top: $spacing-xs;
+  font-size: 0.875rem;
+  color: $white;
+  opacity: 0.9;
+}
+
+.form__success {
+  background: rgba(white, 0.15);
+  padding: $spacing-md;
+  border-radius: 0.25rem;
+  text-align: center;
+  color: $white;
+  margin-top: $spacing-md;
+}
+
+.form__button {
+  align-self: center;
+}

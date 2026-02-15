@@ -1,0 +1,34 @@
+@use "../../lib" as *;
+
+.card-section {
+  padding: $spacing-2xl 0;
+  background: $bg;
+
+  &--alt {
+    background: $bg-alt;
+  }
+
+  &__container {
+    @include container;
+  }
+
+  &__heading {
+    @include h2;
+    margin-bottom: $spacing-xl;
+    text-align: left;
+  }
+
+  &__grid {
+    display: grid;
+    gap: $spacing-md;
+    grid-template-columns: 1fr;
+
+    @media (min-width: $md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: $lg) {
+      grid-template-columns: repeat(4, minmax(12rem, 1fr));
+    }
+  }
+}

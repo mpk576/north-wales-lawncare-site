@@ -1,0 +1,69 @@
+@use "../../lib" as *;
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  min-height: 500px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.hero__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba($primary-dark, 0.65);
+  z-index: 1;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  @include container;
+  width: 100%;
+  padding-bottom: $spacing-3xl;
+  color: $white;
+  text-align: center;
+}
+
+.hero__title {
+  @include h1;
+  margin-bottom: $spacing-md;
+  color: $white;
+}
+
+.hero__subtitle {
+  @include p-large;
+  margin-bottom: $spacing-xl;
+  color: $white;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero__actions {
+  display: flex;
+  gap: $spacing-md;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .button {
+    min-width: 250px;
+    justify-content: center;
+  }
+
+  @media (max-width: $md) {
+    flex-direction: column;
+    align-items: center;
+  }
+}

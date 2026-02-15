@@ -1,0 +1,86 @@
+@use "../../lib" as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: $primary-dark;
+}
+
+.header__container {
+  @include container;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+
+.header__logo {
+  color: $white;
+  font-family: $font-heading;
+  font-weight: 700;
+  font-size: 1.75rem;
+  text-decoration: none;
+}
+
+.header__hamburger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: $white;
+  padding: $spacing-xs;
+
+  @media (min-width: $md) {
+    display: none;
+  }
+}
+
+.header__nav {
+  display: none;
+
+  @media (min-width: $md) {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  &--open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: $primary-dark;
+    padding: $spacing-md 0;
+
+    @media (min-width: $md) {
+      position: static;
+      flex-direction: row;
+      width: auto;
+      padding: 0;
+    }
+  }
+}
+
+.header__nav-link {
+  color: $white;
+  text-decoration: none;
+  font-family: $font-body;
+  font-size: 1.25rem;
+  padding: $spacing-sm $spacing-md;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  @media (min-width: $md) {
+    padding: 0;
+  }
+}

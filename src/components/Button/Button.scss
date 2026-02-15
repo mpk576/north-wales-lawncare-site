@@ -1,0 +1,39 @@
+@use "sass:color";
+@use "../../lib" as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-sm;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+
+  &:focus-visible {
+    outline: 2px solid $white;
+    outline-offset: 2px;
+  }
+
+  &--primary {
+    background-color: $primary;
+    color: $white;
+
+    &:hover {
+      background-color: $primary-dark;
+    }
+  }
+
+  &--accent {
+    background-color: $accent;
+    color: $white;
+
+    &:hover {
+      background-color: color.adjust($accent, $lightness: -10%);
+    }
+  }
+}

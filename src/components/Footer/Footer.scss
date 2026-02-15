@@ -1,0 +1,17 @@
+@use "../../lib" as *;
+
+.footer {
+  background: $primary-dark;
+  color: $white;
+  padding: $spacing-xl 0;
+}
+
+.footer__container {
+  @include container;
+  text-align: center;
+}
+
+.footer__text {
+  @include caption;
+  opacity: 0.8;
+}

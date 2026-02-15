@@ -1,0 +1,53 @@
+@use "sass:color";
+@use "../../lib" as *;
+
+.rich-text {
+  padding-top: $spacing-2xl;
+  padding-bottom: $spacing-2xl;
+  background: $bg;
+
+  @media (min-width: $lg) {
+    padding-top: $spacing-3xl;
+    padding-bottom: $spacing-3xl;
+  }
+}
+
+.rich-text--alt {
+  background: $bg-alt;
+}
+
+.rich-text__container {
+  @include container;
+  @include grid;
+}
+
+.rich-text__heading {
+  @include h2;
+  margin-bottom: $spacing-lg;
+  text-align: center;
+  grid-column: 1 / -1;
+
+  @media (min-width: $lg) {
+    grid-column: 3 / 11;
+  }
+}
+
+.rich-text__body {
+  @include p-large;
+  text-align: center;
+  grid-column: 1 / -1;
+  margin-bottom: $spacing-md;
+
+  @media (min-width: $lg) {
+    grid-column: 3 / 11;
+  }
+
+  a {
+    color: $accent;
+    text-decoration: underline;
+
+    &:hover {
+      color: color.adjust($accent, $lightness: -10%);
+    }
+  }
+}
