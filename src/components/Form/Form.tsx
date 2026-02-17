@@ -66,7 +66,6 @@ export default function Form({ id }: FormProps) {
     }
   }
 
-
   return (
     <section className="form" id={id}>
       <div className="form__container">
@@ -167,7 +166,7 @@ export default function Form({ id }: FormProps) {
             <input
               type="hidden"
               name="_next"
-              value={`https://${siteDomain}?form-submitted=true#${id}`}
+              value={`https://${siteDomain}/thank-you}`}
             />
 
             <div className="form__button">

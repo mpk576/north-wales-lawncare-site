@@ -2,10 +2,10 @@
   "header": {
     "businessName": "North Wales Lawn Care",
     "navLinks": [
-      { "label": "Services", "href": "#services" },
       { "label": "About", "href": "#about" },
-      { "label": "Testimonials", "href": "#testimonials" },
-      { "label": "Contact", "href": "#contact" }
+      { "label": "Services", "href": "#services" },
+      { "label": "Contact", "href": "#contact" },
+      { "label": "Testimonials", "href": "#testimonials" }
     ]
   },
   "hero": {
