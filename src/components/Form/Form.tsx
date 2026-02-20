@@ -10,6 +10,7 @@ interface FormProps {
 
 const formEmailSubmit = process.env.FORM_SUBMIT_EMAIL ?? "";
 const siteDomain = process.env.SITE_DOMAIN ?? "";
+const web3FormAPIKey = process.env.WEB3_FORMS_KEY ?? "";
 
 export default function Form({ id }: FormProps) {
   const { heading, description, fields, submitLabel, successMessage } =
@@ -85,7 +86,7 @@ export default function Form({ id }: FormProps) {
             }}
             noValidate
             className="form__form"
-            action={`https://formsubmit.co/${formEmailSubmit}`}
+            action={`https://api.web3forms.com/submit`}
             method="POST"
           >
             <div className="form__field">
@@ -125,7 +126,6 @@ export default function Form({ id }: FormProps) {
                 <span className="form__error">{errors.email}</span>
               )}
             </div>
-
             <div className="form__field">
               <label className="form__label" htmlFor="form-phone">
                 {fields.phone.label}
@@ -140,7 +140,6 @@ export default function Form({ id }: FormProps) {
                 onChange={handleChange}
               />
             </div>
-
             <div className="form__field">
               <label className="form__label" htmlFor="form-message">
                 {fields.message.label}
@@ -158,17 +157,40 @@ export default function Form({ id }: FormProps) {
                 <span className="form__error">{errors.message}</span>
               )}
             </div>
-            <input
+            {/* <input
               type="hidden"
               name="_subject"
               value="Message from website contact form"
-            />
-            <input
+            /> */}
+            {/* <input
               type="hidden"
               name="_next"
               value={`https://${siteDomain}/thank-you}`}
+            /> */}
+            <input
+              type="hidden"
+              name="subject"
+              value="Sie contact form submission"
+            />
+            <input
+              type="hidden"
+              name="access_key"
+              value="f0f54a75-5b7f-4c89-855c-70149c42631f"
+            />
+            <input
+              type="hidden"
+              name="redirect"
+              value={`https://${siteDomain}/thank-you`}
             />
 
+            <input
+              type="checkbox"
+              name="botcheck"
+              className="hidden"
+              style={{ display: "none" }}
+            />
+
+            <div className="h-captcha" data-captcha="true"></div>
             <div className="form__button">
               <button className="button button--accent" type="submit">
                 {submitLabel}
