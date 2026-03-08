@@ -9,6 +9,7 @@
 !.yarn/plugins
 !.yarn/releases
 !.yarn/versions
+/.claude
 
 # testing
 /coverage
@@ -20,6 +21,7 @@
 
 # production
 /build
+/.wrangler
 
 # misc
 .DS_Store

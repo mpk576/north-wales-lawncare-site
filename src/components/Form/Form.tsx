@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import Turnstile from "react-turnstile";
 import content from "@/data/content.json";
 import "./Form.scss";
 
@@ -8,9 +9,7 @@ interface FormProps {
   id?: string;
 }
 
-const formEmailSubmit = process.env.FORM_SUBMIT_EMAIL ?? "";
-const siteDomain = process.env.SITE_DOMAIN ?? "";
-const web3FormAPIKey = process.env.WEB3_FORMS_KEY ?? "";
+const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!;
 
 export default function Form({ id }: FormProps) {
   const { heading, description, fields, submitLabel, successMessage } =
@@ -25,13 +24,9 @@ export default function Form({ id }: FormProps) {
 
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
-
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    if (params.get("form-submitted") === "true") {
-      setSubmitted(true);
-    }
-  }, []);
+  const [loading, setLoading] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
 
   function validate(): Record<string, string> {
     const newErrors: Record<string, string> = {};
@@ -67,6 +62,42 @@ export default function Form({ id }: FormProps) {
     }
   }
 
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
+    if (!turnstileToken) {
+      setSubmitError("Please complete the security check.");
+      return;
+    }
+
+    setLoading(true);
+    setSubmitError("");
+
+    try {
+      const res = await fetch("/api/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...formData, turnstileToken }),
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to send message");
+      }
+
+      setSubmitted(true);
+    } catch {
+      setSubmitError("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  }
+
   return (
     <section className="form" id={id}>
       <div className="form__container">
@@ -76,19 +107,7 @@ export default function Form({ id }: FormProps) {
         {submitted ? (
           <div className="form__success">{successMessage}</div>
         ) : (
-          <form
-            onSubmit={(e) => {
-              const validationErrors = validate();
-              if (Object.keys(validationErrors).length > 0) {
-                e.preventDefault();
-                setErrors(validationErrors);
-              }
-            }}
-            noValidate
-            className="form__form"
-            action={`https://api.web3forms.com/submit`}
-            method="POST"
-          >
+          <form onSubmit={handleSubmit} noValidate className="form__form">
             <div className="form__field">
               <label className="form__label" htmlFor="form-name">
                 {fields.name.label}
@@ -126,6 +145,7 @@ export default function Form({ id }: FormProps) {
                 <span className="form__error">{errors.email}</span>
               )}
             </div>
+
             <div className="form__field">
               <label className="form__label" htmlFor="form-phone">
                 {fields.phone.label}
@@ -140,6 +160,7 @@ export default function Form({ id }: FormProps) {
                 onChange={handleChange}
               />
             </div>
+
             <div className="form__field">
               <label className="form__label" htmlFor="form-message">
                 {fields.message.label}
@@ -157,45 +178,33 @@ export default function Form({ id }: FormProps) {
                 <span className="form__error">{errors.message}</span>
               )}
             </div>
-            {/* <input
-              type="hidden"
-              name="_subject"
-              value="Message from website contact form"
-            /> */}
-            {/* <input
-              type="hidden"
-              name="_next"
-              value={`https://${siteDomain}/thank-you}`}
-            /> */}
-            <input
-              type="hidden"
-              name="subject"
-              value="Sie contact form submission"
-            />
-            <input
-              type="hidden"
-              name="access_key"
-              value="f0f54a75-5b7f-4c89-855c-70149c42631f"
-            />
-            <input
-              type="hidden"
-              name="redirect"
-              value={`https://${siteDomain}/thank-you`}
-            />
 
-            <input
-              type="checkbox"
-              name="botcheck"
-              className="hidden"
-              style={{ display: "none" }}
-            />
+            {submitError && (
+              <p className="form__error form__error--submit">{submitError}</p>
+            )}
 
-            <div className="h-captcha" data-captcha="true"></div>
+            <div className="form__turnstile">
+              <Turnstile
+                sitekey={turnstileSiteKey}
+                onVerify={setTurnstileToken}
+                onExpire={() => setTurnstileToken("")}
+                onError={() => setTurnstileToken("")}
+              />
+            </div>
+
             <div className="form__button">
-              <button className="button button--accent" type="submit">
-                {submitLabel}
+              <button
+                className="button button--accent"
+                type="submit"
+                disabled={loading}
+              >
+                {loading ? "Sending..." : submitLabel}
               </button>
             </div>
+
+            <p className="form__privacy">
+              <a href="/privacy-policy">View our privacy policy</a>
+            </p>
           </form>
         )}
       </div>

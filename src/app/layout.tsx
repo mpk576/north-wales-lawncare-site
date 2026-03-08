@@ -31,6 +31,11 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&display=swap"
           rel="stylesheet"
         ></link>
+        <script
+          src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+          async
+          defer
+        ></script>
       </head>
       <body>{children}</body>
     </html>

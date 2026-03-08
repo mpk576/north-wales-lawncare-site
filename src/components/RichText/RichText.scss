@@ -30,6 +30,11 @@
   @media (min-width: $lg) {
     grid-column: 3 / 11;
   }
+
+  &.rich-text__heading--h1 {
+    @include h1;
+    text-align: left;
+  }
 }
 
 .rich-text__body {
@@ -48,6 +53,47 @@
 
     &:hover {
       color: color.adjust($accent, $lightness: -10%);
+    }
+  }
+}
+
+.rich-text__prose {
+  grid-column: 1 / -1;
+
+  @media (min-width: $lg) {
+    grid-column: 3 / 11;
+  }
+
+  p {
+    @include p;
+    line-height: 1.75;
+    margin-bottom: $spacing-md;
+  }
+
+  h2 {
+    @include h3;
+    margin-top: $spacing-2xl;
+    margin-bottom: $spacing-sm;
+    color: $primary-dark;
+  }
+
+  ul {
+    @include p;
+    line-height: 1.75;
+    margin-bottom: $spacing-md;
+    padding-left: $spacing-xl;
+
+    li {
+      margin-bottom: $spacing-xs;
+    }
+  }
+
+  a {
+    color: $primary;
+    text-decoration: underline;
+
+    &:hover {
+      color: $primary-dark;
     }
   }
 }
