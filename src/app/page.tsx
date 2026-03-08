@@ -10,7 +10,7 @@ export default function Home() {
   const serviceCards = content.services.items.map((item) => ({
     title: item.title,
     body: item.description,
-    icon: item.icon,
+    image: item.image,
   }));
 
   const testimonialCards = content.testimonials.items.map((item) => ({

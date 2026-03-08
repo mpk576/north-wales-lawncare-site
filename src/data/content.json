@@ -9,6 +9,10 @@
     ]
   },
   "hero": {
+    "image": {
+      "src": "/images/Depositphotos_lawncare.jpg",
+      "alt": "Lush green lawn in North Wales"
+    },
     "headline": "Professional Lawn Care Across North Wales",
     "subheadline": "Reliable, friendly, and affordable lawn treatments for homes and businesses throughout Conwy, Gwynedd, Anglesey and Denbighshire.",
     "ctas": [
@@ -22,22 +26,34 @@
       {
         "title": "Feed & Weed",
         "description": "A professional feed and weed treatment to nourish your lawn and eliminate unwanted weeds.",
-        "icon": "treatment"
+        "image": {
+          "src": "/images/Depositphotos_weed.jpg",
+          "alt": ""
+        }
       },
       {
         "title": "Scarification",
         "description": "Remove built-up thatch and dead material that suffocates your lawn.",
-        "icon": "mowing"
+        "image": {
+          "src": "/images/Depositphotos_scarification.jpg",
+          "alt": ""
+        }
       },
       {
         "title": "Moss Control",
         "description": "Targeted moss treatment to clear moss and prevent it from returning, leaving your lawn cleaner and healthier.",
-        "icon": "compost"
+        "image": {
+          "src": "/images/Depositphotos_moss.jpg",
+          "alt": ""
+        }
       },
       {
         "title": "Aeration",
         "description": "Relieve soil compaction and allow air, water, and nutrients to reach the roots.",
-        "icon": "sprinkler"
+        "image": {
+          "src": "/images/Depositphotos_aeration.jpg",
+          "alt": ""
+        }
       }
     ]
   },

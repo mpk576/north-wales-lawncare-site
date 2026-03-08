@@ -6,7 +6,7 @@ interface CardProps {
   body: string;
   attribution?: string;
   icon?: string;
-  image?: string;
+  image?: { src: string; alt: string };
   align?: "left" | "center";
 }
 
@@ -25,7 +25,7 @@ export default function Card({
       {(icon || image) && (
         <div className={`card__media${icon ? " card__media--icon" : ""}`}>
           {icon && <Icon type={icon} fill="#FFFFFF" size="6rem" />}
-          {image && <img className="card__image" src={image} alt="" />}
+          {image && <img className="card__image" src={image.src} alt={image.alt} />}
         </div>
       )}
       <div className="card__content">

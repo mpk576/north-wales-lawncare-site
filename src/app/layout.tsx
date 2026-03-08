@@ -1,11 +1,5 @@
 import type { Metadata } from "next";
-import { Alan_Sans } from "next/font/google";
 import "./globals.scss";
-
-const alanSans = Alan_Sans({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "North Wales Lawn Care",
@@ -21,16 +15,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&display=swap"
-          rel="stylesheet"
-        ></link>
         <script
           src="https://challenges.cloudflare.com/turnstile/v0/api.js"
           async

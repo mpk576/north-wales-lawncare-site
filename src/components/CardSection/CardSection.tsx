@@ -6,7 +6,7 @@ interface CardData {
   body: string;
   attribution?: string;
   icon?: string;
-  image?: string;
+  image?: { src: string; alt: string };
   align?: "left" | "center";
 }
 

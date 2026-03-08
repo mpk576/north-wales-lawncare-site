@@ -9,8 +9,8 @@ export default function Hero() {
     <section className="hero">
       <img
         className="hero__image"
-        src="/images/marc-pell-ZmcOLTGdMbQ-unsplash.jpg"
-        alt="Lush green lawn in North Wales"
+        src={hero.image.src}
+        alt={hero.image.alt}
       />
       <div className="hero__overlay" />
       <div className="hero__content">
