@@ -10,13 +10,13 @@ export default function CookieBanner() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    if (!localStorage.getItem("cookie-notice-dismissed")) {
+    if (!sessionStorage.getItem("cookie-notice-dismissed")) {
       setVisible(true);
     }
   }, []);
 
   function dismiss() {
-    localStorage.setItem("cookie-notice-dismissed", "1");
+    sessionStorage.setItem("cookie-notice-dismissed", "1");
     setVisible(false);
   }
 
