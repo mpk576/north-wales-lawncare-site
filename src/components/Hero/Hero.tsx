@@ -7,11 +7,21 @@ const { hero } = content;
 export default function Hero() {
   return (
     <section className="hero">
-      <img
-        className="hero__image"
-        src={hero.image.src}
-        alt={hero.image.alt}
-      />
+      <picture>
+        <source
+          type="image/webp"
+          srcSet="/images/deposit-hero-S.webp 768w, /images/deposit-hero-L.webp 1440w"
+          sizes="100vw"
+        />
+        <img
+          className="hero__image"
+          src={hero.image.src}
+          srcSet="/images/deposit-hero-S.jpg 768w, /images/deposit-hero-L.jpg 1440w"
+          sizes="100vw"
+          alt={hero.image.alt}
+          fetchPriority="high"
+        />
+      </picture>
       <div className="hero__overlay" />
       <div className="hero__content">
         <h1 className="hero__title">{hero.headline}</h1>

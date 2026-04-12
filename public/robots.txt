@@ -1,2 +1,143 @@
+# Allow all major search engines to index the site
 User-agent: *
+Allow: /
+Disallow: /api/
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Bing / Microsoft
+User-agent: Bingbot
+Allow: /
+
+# DuckDuckGo (uses Bingbot but also its own)
+User-agent: DuckDuckBot
+Allow: /
+
+# Yahoo (powered by Bing)
+User-agent: Slurp
+Allow: /
+
+# Ecosia (powered by Bing)
+User-agent: Ecosia
+Allow: /
+
+# Apple (Siri, Spotlight, Apple Maps)
+User-agent: Applebot
+Allow: /
+
+# Samsung Internet browser
+User-agent: SamsungBot
+Allow: /
+
+# Facebook / Meta (link previews and crawling)
+User-agent: facebookexternalhit
+Allow: /
+
+# Google Image / Maps (uses main Googlebot, but explicit image crawler listed)
+User-agent: Googlebot-Image
+Allow: /
+
+# OpenAI / ChatGPT
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic / Claude
+User-agent: anthropic-ai
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+
+# Google Gemini / AI training
+User-agent: Google-Extended
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Common Crawl (used by many LLMs for training data)
+User-agent: CCBot
+Allow: /
+
+# ---------------------------------------------------------------------------
+# Blocked: Less reputable / privacy-concerning search engines
+# ---------------------------------------------------------------------------
+
+# Yandex (Russian search engine)
+User-agent: Yandex
 Disallow: /
+User-agent: YandexBot
+Disallow: /
+
+# Baidu (Chinese search engine)
+User-agent: Baiduspider
+Disallow: /
+
+# Mail.ru (Russian)
+User-agent: Mail.RU_Bot
+Disallow: /
+
+# ---------------------------------------------------------------------------
+# Blocked: Aggressive SEO crawlers / data harvesting tools
+# ---------------------------------------------------------------------------
+
+# Ahrefs
+User-agent: AhrefsBot
+Disallow: /
+
+# SEMrush
+User-agent: SemrushBot
+Disallow: /
+
+# Majestic SEO
+User-agent: MJ12bot
+Disallow: /
+
+# Moz
+User-agent: DotBot
+Disallow: /
+
+# BLEXBot (aggressive scraper)
+User-agent: BLEXBot
+Disallow: /
+
+# MegaIndex
+User-agent: MegaIndex
+Disallow: /
+
+# ---------------------------------------------------------------------------
+# Blocked: Privacy-concerning / undesirable AI/data scrapers
+# ---------------------------------------------------------------------------
+
+# ByteDance / TikTok crawler
+User-agent: Bytespider
+Disallow: /
+
+# Huawei PetalBot
+User-agent: PetalBot
+Disallow: /
+
+# ---------------------------------------------------------------------------
+# Blocked: Known spam / malicious bots
+# ---------------------------------------------------------------------------
+
+User-agent: spbot
+Disallow: /
+User-agent: Scrapy
+Disallow: /
+User-agent: sindicetech
+Disallow: /
+User-agent: SiteExplorer
+Disallow: /
+User-agent: BacklinkCrawler
+Disallow: /
+User-agent: adidxbot
+Disallow: /
+
+Sitemap: https://www.northwaleslawncare.co.uk/sitemap.xml

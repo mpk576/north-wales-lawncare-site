@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import CookieBanner from "@/components/CookieBanner/CookieBanner";
 import "./globals.scss";
 
 export const metadata: Metadata = {
@@ -21,7 +22,10 @@ export default function RootLayout({
           defer
         ></script>
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <CookieBanner />
+      </body>
     </html>
   );
 }

@@ -10,7 +10,7 @@
   },
   "hero": {
     "image": {
-      "src": "/images/Depositphotos_lawncare.jpg",
+      "src": "/images/deposit-hero-L.jpg",
       "alt": "Lush green lawn in North Wales"
     },
     "headline": "Professional Lawn Care Across North Wales",
@@ -35,7 +35,7 @@
         "title": "Scarification",
         "description": "Remove built-up thatch and dead material that suffocates your lawn.",
         "image": {
-          "src": "/images/Depositphotos_scarification.jpg",
+          "src": "/images/deposit-scarification-S.jpg",
           "alt": ""
         }
       },
@@ -43,7 +43,7 @@
         "title": "Moss Control",
         "description": "Targeted moss treatment to clear moss and prevent it from returning, leaving your lawn cleaner and healthier.",
         "image": {
-          "src": "/images/Depositphotos_moss.jpg",
+          "src": "/images/deposit-moss-S.jpg",
           "alt": ""
         }
       },
@@ -51,7 +51,7 @@
         "title": "Aeration",
         "description": "Relieve soil compaction and allow air, water, and nutrients to reach the roots.",
         "image": {
-          "src": "/images/Depositphotos_aeration.jpg",
+          "src": "/images/deposit-aeration-S.jpg",
           "alt": ""
         }
       }
@@ -111,6 +111,12 @@
         "attribution": "David T., Anglesey"
       }
     ]
+  },
+  "cookieBanner": {
+    "text": "This site uses essential cookies only. This is required for security and to keep the site working. No tracking or advertising cookies are used.",
+    "privacyLinkLabel": "Privacy Policy",
+    "privacyLinkHref": "/privacy-policy",
+    "dismissLabel": "Dismiss"
   },
   "footer": {
     "businessName": "North Wales Lawn Care",

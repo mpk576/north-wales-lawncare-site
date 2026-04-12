@@ -90,10 +90,9 @@
 }
 
 .form__privacy {
-  @include caption;
+  @include p;
   text-align: center;
   margin-top: $spacing-md;
-  opacity: 0.7;
 
   a {
     color: $white;

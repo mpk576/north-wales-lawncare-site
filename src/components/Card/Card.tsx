@@ -25,7 +25,12 @@ export default function Card({
       {(icon || image) && (
         <div className={`card__media${icon ? " card__media--icon" : ""}`}>
           {icon && <Icon type={icon} fill="#FFFFFF" size="6rem" />}
-          {image && <img className="card__image" src={image.src} alt={image.alt} />}
+          {image && (
+            <picture>
+              <source type="image/webp" srcSet={image.src.replace(/\.(jpg|jpeg|png)$/i, ".webp")} />
+              <img className="card__image" src={image.src} alt={image.alt} loading="lazy" />
+            </picture>
+          )}
         </div>
       )}
       <div className="card__content">

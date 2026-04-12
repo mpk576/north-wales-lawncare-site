@@ -121,6 +121,7 @@ export default function Form({ id }: FormProps) {
                 value={formData.name}
                 onChange={handleChange}
                 required
+                autoComplete="name"
               />
               {errors.name && (
                 <span className="form__error">{errors.name}</span>
@@ -140,6 +141,7 @@ export default function Form({ id }: FormProps) {
                 value={formData.email}
                 onChange={handleChange}
                 required
+                autoComplete="email"
               />
               {errors.email && (
                 <span className="form__error">{errors.email}</span>
@@ -158,6 +160,7 @@ export default function Form({ id }: FormProps) {
                 placeholder={fields.phone.placeholder}
                 value={formData.phone}
                 onChange={handleChange}
+                autoComplete="tel"
               />
             </div>
 

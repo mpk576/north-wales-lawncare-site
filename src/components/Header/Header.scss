@@ -45,13 +45,11 @@
 
   @media (min-width: $md) {
     display: flex;
-    gap: 1.5rem;
     align-items: center;
   }
 
   &--open {
     display: flex;
-    flex-direction: column;
     position: absolute;
     top: 60px;
     left: 0;
@@ -61,10 +59,25 @@
 
     @media (min-width: $md) {
       position: static;
-      flex-direction: row;
       width: auto;
       padding: 0;
     }
+  }
+}
+
+.header__nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @media (min-width: $md) {
+    flex-direction: row;
+    gap: 1.5rem;
+    align-items: center;
+    width: auto;
   }
 }
 
