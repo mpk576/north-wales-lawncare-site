@@ -4,102 +4,106 @@
   background: $primary;
   padding: $spacing-2xl 0;
   color: $white;
-}
 
-.form__container {
-  @include container;
-  max-width: 700px;
-}
-
-.form__heading {
-  @include h2;
-  color: $white;
-  margin-bottom: $spacing-md;
-}
-
-.form__description {
-  @include p-large;
-  color: $white;
-  margin-bottom: $spacing-xl;
-  opacity: 0.9;
-}
-
-.form__field {
-  margin-bottom: $spacing-md;
-}
-
-.form__label {
-  @include p-large;
-  display: block;
-  margin-bottom: $spacing-xs;
-  font-weight: 600;
-  color: $white;
-}
-
-.form__input,
-.form__textarea {
-  @include p-large;
-  width: 100%;
-  padding: $spacing-sm $spacing-md;
-  border: none;
-  border-radius: 0.25rem;
-  font-size: 1rem;
-  font-family: inherit;
-  background: $white;
-  color: $text;
-
-  &:focus {
-    outline: 2px solid $accent;
-    outline-offset: 1px;
+  &__container {
+    @include container;
+    max-width: 700px;
   }
-}
 
-.form__form {
-  display: flex;
-  flex-direction: column;
-}
-
-.form__textarea {
-  min-height: 150px;
-  resize: vertical;
-}
-
-.form__error {
-  display: block;
-  margin-top: $spacing-xs;
-  font-size: 0.875rem;
-  color: $white;
-  opacity: 0.9;
-}
-
-.form__success {
-  background: rgba(white, 0.15);
-  padding: $spacing-md;
-  border-radius: 0.25rem;
-  text-align: center;
-  color: $white;
-  margin-top: $spacing-md;
-}
-
-.form__button {
-  align-self: center;
-}
-
-.form__turnstile {
-  align-self: center;
-}
-
-.form__privacy {
-  @include p;
-  text-align: center;
-  margin-top: $spacing-md;
-
-  a {
+  &__heading {
+    @include h2;
     color: $white;
-    text-decoration: underline;
+    margin-bottom: $spacing-md;
+  }
 
-    &:hover {
-      opacity: 0.9;
+  &__description {
+    @include p-large;
+    color: $white;
+    margin-bottom: $spacing-xl;
+    opacity: 0.9;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__field {
+    margin-bottom: $spacing-md;
+  }
+
+  &__label {
+    @include p-large;
+    display: block;
+    margin-bottom: $spacing-xs;
+    font-weight: 600;
+    color: $white;
+  }
+
+  &__input,
+  &__textarea {
+    @include p-large;
+    width: 100%;
+    padding: $spacing-sm $spacing-md;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    font-family: inherit;
+    background: $white;
+    color: $text;
+
+    &:focus {
+      outline: 2px solid $accent;
+      outline-offset: 1px;
+    }
+  }
+
+  &__textarea {
+    min-height: 150px;
+    resize: vertical;
+  }
+
+  &__error {
+    display: block;
+    margin-top: $spacing-xs;
+    font-size: 0.875rem;
+    color: $white;
+    opacity: 0.9;
+
+    &--submit {
+      text-align: center;
+    }
+  }
+
+  &__success {
+    background: rgba(white, 0.15);
+    padding: $spacing-md;
+    border-radius: 0.25rem;
+    text-align: center;
+    color: $white;
+    margin-top: $spacing-md;
+  }
+
+  &__button {
+    align-self: center;
+  }
+
+  &__turnstile {
+    align-self: center;
+  }
+
+  &__privacy {
+    @include p;
+    text-align: center;
+    margin-top: $spacing-md;
+
+    a {
+      color: $white;
+      text-decoration: underline;
+
+      &:hover {
+        opacity: 0.9;
+      }
     }
   }
 }

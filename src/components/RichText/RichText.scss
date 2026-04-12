@@ -10,90 +10,90 @@
     padding-top: $spacing-3xl;
     padding-bottom: $spacing-3xl;
   }
-}
 
-.rich-text--alt {
-  background: $bg-alt;
-}
-
-.rich-text__container {
-  @include container;
-  @include grid;
-}
-
-.rich-text__heading {
-  @include h2;
-  margin-bottom: $spacing-lg;
-  text-align: center;
-  grid-column: 1 / -1;
-
-  @media (min-width: $lg) {
-    grid-column: 3 / 11;
+  &--alt {
+    background: $bg-alt;
   }
 
-  &.rich-text__heading--h1 {
-    @include h1;
-    text-align: left;
-  }
-}
-
-.rich-text__body {
-  @include p-large;
-  text-align: center;
-  grid-column: 1 / -1;
-  margin-bottom: $spacing-md;
-
-  @media (min-width: $lg) {
-    grid-column: 3 / 11;
+  &__container {
+    @include container;
+    @include grid;
   }
 
-  a {
-    color: $accent;
-    text-decoration: underline;
+  &__heading {
+    @include h2;
+    margin-bottom: $spacing-lg;
+    text-align: center;
+    grid-column: 1 / -1;
 
-    &:hover {
-      color: color.adjust($accent, $lightness: -10%);
+    @media (min-width: $lg) {
+      grid-column: 3 / 11;
     }
-  }
-}
 
-.rich-text__prose {
-  grid-column: 1 / -1;
-
-  @media (min-width: $lg) {
-    grid-column: 3 / 11;
-  }
-
-  p {
-    @include p;
-    line-height: 1.75;
-    margin-bottom: $spacing-md;
-  }
-
-  h2 {
-    @include h3;
-    margin-top: $spacing-2xl;
-    margin-bottom: $spacing-sm;
-    color: $primary-dark;
-  }
-
-  ul {
-    @include p;
-    line-height: 1.75;
-    margin-bottom: $spacing-md;
-    padding-left: $spacing-xl;
-
-    li {
-      margin-bottom: $spacing-xs;
+    &--h1 {
+      @include h1;
+      text-align: left;
     }
   }
 
-  a {
-    color: $primary;
-    text-decoration: underline;
+  &__body {
+    @include p-large;
+    text-align: center;
+    grid-column: 1 / -1;
+    margin-bottom: $spacing-md;
 
-    &:hover {
+    @media (min-width: $lg) {
+      grid-column: 3 / 11;
+    }
+
+    a {
+      color: $accent;
+      text-decoration: underline;
+
+      &:hover {
+        color: color.adjust($accent, $lightness: -10%);
+      }
+    }
+  }
+
+  &__prose {
+    grid-column: 1 / -1;
+
+    @media (min-width: $lg) {
+      grid-column: 3 / 11;
+    }
+
+    p {
+      @include p;
+      line-height: 1.75;
+      margin-bottom: $spacing-md;
+    }
+
+    h2 {
+      @include h3;
+      margin-top: $spacing-2xl;
+      margin-bottom: $spacing-sm;
       color: $primary-dark;
+    }
+
+    ul {
+      @include p;
+      line-height: 1.75;
+      margin-bottom: $spacing-md;
+      padding-left: $spacing-xl;
+
+      li {
+        margin-bottom: $spacing-xs;
+      }
+    }
+
+    a {
+      color: $primary;
+      text-decoration: underline;
+
+      &:hover {
+        color: $primary-dark;
+      }
     }
   }
 }

@@ -4,49 +4,49 @@
   background: $bg-alt;
   border-radius: 0.25rem;
   overflow: hidden;
-}
 
-.card--center {
-  text-align: center;
-}
+  &--center {
+    text-align: center;
+  }
 
-.card__media {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100px;
-}
+  &__media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
 
-.card__media--icon {
-  background: $primary;
-  padding: $spacing-lg;
-}
+    &--icon {
+      background: $primary;
+      padding: $spacing-lg;
+    }
+  }
 
-.card__image {
-  width: 100%;
-  display: block;
-}
+  &__image {
+    width: 100%;
+    display: block;
+  }
 
-.card__content {
-  padding: $spacing-lg;
-}
+  &__content {
+    padding: $spacing-lg;
+  }
 
-.card__title {
-  @include h4;
-  margin-bottom: $spacing-sm;
-  color: $text;
-}
+  &__title {
+    @include h4;
+    margin-bottom: $spacing-sm;
+    color: $text;
+  }
 
-.card__body {
-  @include p;
-  font-size: 1.25rem;
-  color: $text;
-  margin-bottom: $spacing-sm;
-}
+  &__body {
+    @include p;
+    font-size: 1.25rem;
+    color: $text;
+    margin-bottom: $spacing-sm;
+  }
 
-.card__attribution {
-  @include caption;
-  font-size: 1rem;
-  color: $black;
-  font-style: italic;
+  &__attribution {
+    @include caption;
+    font-size: 1rem;
+    color: $black;
+    font-style: italic;
+  }
 }
