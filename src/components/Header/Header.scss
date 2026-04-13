@@ -14,7 +14,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 60px;
+  height: 3.75rem;
 }
 
 .header__logo {
@@ -51,7 +51,7 @@
   &--open {
     display: flex;
     position: absolute;
-    top: 60px;
+    top: 3.75rem;
     left: 0;
     width: 100%;
     background-color: $primary-dark;

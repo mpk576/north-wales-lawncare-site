@@ -7,7 +7,7 @@
 
   &__container {
     @include container;
-    max-width: 700px;
+    max-width: 43.75rem;
   }
 
   &__heading {
@@ -54,12 +54,12 @@
 
     &:focus {
       outline: 2px solid $accent;
-      outline-offset: 1px;
+      outline-offset: 0.0625rem;
     }
   }
 
   &__textarea {
-    min-height: 150px;
+    min-height: 9.375rem;
     resize: vertical;
   }
 
