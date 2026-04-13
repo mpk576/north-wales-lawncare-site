@@ -9,6 +9,11 @@
   display: flex;
   align-items: flex-end;
   background-color: $primary-dark;
+  padding-top: 60px;
+
+  @media (min-width: $md) {
+    padding-top: 0;
+  }
 
   &__image {
     position: absolute;
