@@ -140,4 +140,4 @@ Disallow: /
 User-agent: adidxbot
 Disallow: /
 
-Sitemap: https://www.northwaleslawncare.co.uk/sitemap.xml
+Sitemap: https://www.north-wales-lawncare.co.uk/sitemap.xml
